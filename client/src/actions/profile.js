@@ -31,6 +31,7 @@ export const getCurrentProfile = () => async (dispatch) => {
 // Get all profiles
 export const getProfiles = () => async (dispatch) => {
 	dispatch({ type: CLEAR_PROFILE });
+
 	try {
 		const res = await axios.get('/api/profile');
 
@@ -41,7 +42,7 @@ export const getProfiles = () => async (dispatch) => {
 	} catch (err) {
 		dispatch({
 			type: PROFILE_ERROR,
-			payload: { msg: err.response.statusText, status: err.response.status }
+			payload: { msg: err.response.statusText, status: err.response.status } // change this.
 		});
 	}
 };
